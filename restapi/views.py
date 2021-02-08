@@ -49,11 +49,6 @@ class location(APIView):
         
 class available(APIView):
     def post(self, request, format=None):
-        
-        f = open("testing.txt", "a+")
-        f.write(str(request.body))
-        f.close()
-        
         serializer = LocationSerializer(data=request.data)
         if serializer.is_valid():
             
