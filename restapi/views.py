@@ -8,7 +8,6 @@ from .serializers import DriverSerializer, LocationSerializer
 from .models import Driver, Location
 import math
 import decimal
-import json
 
 def index(self):
     return HttpResponse("Hello, world. You're at Rest.")
