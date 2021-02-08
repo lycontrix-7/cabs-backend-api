@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from restapi.views import *
+from restapi.views import index, register, location, available
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', index),
+    url('api/v1/driver/register/', register.as_view()),
+    
+    url(r'^api/v1/driver/(?P<id>\w{0,50})/sendLocation/', location.as_view()),
+    url('api/v1/passenger/available_cabs/', available.as_view())
 ]
